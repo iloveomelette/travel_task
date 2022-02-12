@@ -5,7 +5,8 @@ puts <<~TEXT
        2. 北海道旅行（20000円）
        3. 九州旅行（15000円）
 
-     TEXT
+TEXT
+
 while true
   # プランの番号選択を案内
   print "プランの番号を選択 > "
@@ -24,4 +25,26 @@ while true
   break if select_plan >=1  && select_plan <=3
   puts "1~3の番号を入力してください。"
 end
-puts "#{place}旅行ですね。"
+
+puts <<~TEXT
+       
+  #{place}旅行ですね。
+
+TEXT
+
+puts "何名で予約されますか？"
+
+# 人数入力に関する処理を記述する
+while true
+  print "人数を入力 > "
+  input_people = gets.to_i
+  if input_people >= 1
+    puts "#{input_people}人ですね。"
+    break
+  end
+  puts "1人以上の人数を入力してください。"
+end
+
+# 合計料金の計算と出力をする
+total_price = price * input_people
+puts "合計料金は#{total_price}円です。"
