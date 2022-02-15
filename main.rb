@@ -46,5 +46,17 @@ while true
 end
 
 # 合計料金の計算と出力をする
+discount_rate = 0.1
+discount_percent = discount_rate * 100
+discount_people = 5
 total_price = price * input_people
-puts "合計料金は#{total_price}円です。"
+discount_price = total_price * (1 - discount_rate)
+
+if input_people >= discount_people
+  puts <<~TEXT
+    #{discount_people}人以上なので、#{discount_percent.floor}％割引となります。
+    合計金額は#{discount_price.floor}円です。
+  TEXT
+else
+  puts "合計料金は#{total_price}円です。"
+end
