@@ -12,13 +12,14 @@ while true
   print "プランの番号を選択 > "
   select_plan = gets.to_i
   # 番号選択に対する返答
-  if select_plan === 1
+  case select_plan
+  when 1
     place = "沖縄"
     price = 10000
-  elsif select_plan === 2
+  when 2
     place = "北海道"
     price = 20000
-  elsif select_plan === 3
+  when 3
     place = "九州"
     price = 15000
   end
