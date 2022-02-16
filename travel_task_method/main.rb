@@ -12,3 +12,5 @@ require "./methods"
 ask_plan
 # プランを見せる処理
 show_plan(plans)
+# プランを選択する処理
+selected_plan = select_plan(plans)

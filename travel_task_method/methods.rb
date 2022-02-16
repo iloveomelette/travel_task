@@ -13,3 +13,10 @@ def show_plan(plans)
     puts "#{i}. #{plan[:place]}旅行(¥#{plan[:price]})"
   end
 end
+
+# プランを選択する処理
+def select_plan(plans)
+  print "プランの番号を選択 > "
+  select_num = gets.to_i
+  plans[select_num - 1]
+end
