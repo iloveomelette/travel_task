@@ -20,3 +20,14 @@ def select_plan(plans)
   select_num = gets.to_i
   plans[select_num - 1]
 end
+
+# 予約人数を尋ねるメッセージ
+def ask_reservation(select_plan)
+  puts <<~TEXT
+  
+  #{select_plan[:place]}ですね。
+
+  何名で予約されますか？
+  
+  TEXT
+end

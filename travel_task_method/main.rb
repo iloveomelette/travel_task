@@ -14,3 +14,5 @@ ask_plan
 show_plan(plans)
 # プランを選択する処理
 selected_plan = select_plan(plans)
+# 予約人数を尋ねるメッセージ
+ask_reservation(selected_plan)
