@@ -10,3 +10,5 @@ require "./methods"
 
 # 旅行プランを尋ねるメッセージ
 ask_plan
+# プランを見せる処理
+show_plan(plans)
