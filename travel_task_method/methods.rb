@@ -31,3 +31,14 @@ def ask_reservation(select_plan)
   
   TEXT
 end
+
+# 人数を入力する処理
+def input_people
+  print "人数を入力 > "
+  input_num = gets.to_i
+  puts <<~TEXT
+  
+  #{input_num}名ですね。
+  
+  TEXT
+end
