@@ -16,8 +16,12 @@ end
 
 # プランを選択する処理
 def select_plan(plans)
-  print "プランの番号を選択 > "
-  select_num = gets.to_i
+  while true do
+    print "プランの番号を選択 > "
+    select_num = gets.to_i
+    break if select_num > 0 && select_num <= plans.length
+    puts "1~#{plans.length}の番号を入力してください。"
+  end
   plans[select_num - 1]
 end
 
