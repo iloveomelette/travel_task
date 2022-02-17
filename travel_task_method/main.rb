@@ -17,4 +17,6 @@ selected_plan = select_plan(plans)
 # 予約人数を尋ねるメッセージ
 ask_reservation(selected_plan)
 # 人数を入力する処理
-input_people
+inputed_people = input_people
+# 合計金額を計算する処理
+calculate_sum_price(inputed_people, selected_plan)

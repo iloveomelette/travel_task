@@ -25,7 +25,7 @@ end
 def ask_reservation(select_plan)
   puts <<~TEXT
   
-  #{select_plan[:place]}ですね。
+  #{select_plan[:place]}旅行ですね。
 
   何名で予約されますか？
   
@@ -41,4 +41,11 @@ def input_people
   #{input_num}名ですね。
   
   TEXT
+  input_num
+end
+
+# 合計金額を計算する処理
+def calculate_sum_price(inputed_people, selected_plan)
+  sum_price = inputed_people * selected_plan[:price]
+  puts "合計金額は#{sum_price}円です。"
 end
