@@ -38,14 +38,22 @@ end
 
 # 人数を入力する処理
 def input_people
-  print "人数を入力 > "
-  input_num = gets.to_i
+  while true do
+    print "人数を入力 > "
+    input_num = gets.to_i
+    break if input_num >= 0
+    puts "1人以上の人数を入力してください。"
+  end
+  input_num
+end
+
+# 人数の確認をするメッセージ
+def confirm_people(inputed_people)
   puts <<~TEXT
   
-  #{input_num}名ですね。
+  #{inputed_people}名ですね。
   
   TEXT
-  input_num
 end
 
 # 合計金額を計算する処理
