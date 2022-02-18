@@ -1,3 +1,9 @@
+# 料金に関する定数の定義
+DISCOUNT_PEOPLE = 5
+DISCOUNT_NUM = 0.1
+DISCOUNT_RATE = DISCOUNT_NUM * 100
+AFTER_DISCOUNT_RATE = 1 - DISCOUNT_NUM
+
 # 旅行プランを尋ねるメッセージ
 def ask_plan
   puts <<~TEXT
@@ -41,7 +47,7 @@ def input_people
   while true do
     print "人数を入力 > "
     input_num = gets.to_i
-    break if input_num >= 0
+    break if input_num > 0
     puts "1人以上の人数を入力してください。"
   end
   input_num
@@ -59,5 +65,15 @@ end
 # 合計金額を計算する処理
 def calculate_sum_price(inputed_people, selected_plan)
   sum_price = inputed_people * selected_plan[:price]
-  puts "合計金額は#{sum_price}円です。"
+  discount_price = sum_price * AFTER_DISCOUNT_RATE
+
+  if inputed_people >= DISCOUNT_PEOPLE
+    puts <<~TEXT
+    #{DISCOUNT_PEOPLE}名以上ですので#{DISCOUNT_RATE.floor}%割引となります。
+    
+    合計料金は#{discount_price.floor}円です。
+    TEXT
+  else
+    puts "合計金額は#{sum_price}円です。"
+  end
 end
