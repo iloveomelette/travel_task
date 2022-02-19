@@ -5,7 +5,7 @@ DISCOUNT_RATE = DISCOUNT_NUM * 100
 AFTER_DISCOUNT_RATE = 1 - DISCOUNT_NUM
 
 # 旅行プランを尋ねるメッセージ
-def ask_plan
+def ask_plan_message
   puts <<~TEXT
   
   旅行プランを選択して下さい。
@@ -32,7 +32,7 @@ def select_plan(plans)
 end
 
 # 予約人数を尋ねるメッセージ
-def ask_reservation(select_plan)
+def ask_reservation_message(select_plan)
   puts <<~TEXT
   
   #{select_plan[:place]}旅行ですね。
@@ -54,20 +54,20 @@ def input_people
 end
 
 # 人数の確認をするメッセージ
-def confirm_people(inputed_people)
+def confirm_people_message(inputted_people)
   puts <<~TEXT
   
-  #{inputed_people}名ですね。
+  #{inputted_people}名ですね。
   
   TEXT
 end
 
 # 合計金額を計算する処理
-def calculate_sum_price(inputed_people, selected_plan)
-  sum_price = inputed_people * selected_plan[:price]
+def calculate_sum_price(inputted_people, selected_plan)
+  sum_price = inputted_people * selected_plan[:price]
   discount_price = sum_price * AFTER_DISCOUNT_RATE
 
-  if inputed_people >= DISCOUNT_PEOPLE
+  if inputted_people >= DISCOUNT_PEOPLE
     puts <<~TEXT
     #{DISCOUNT_PEOPLE}名以上ですので#{DISCOUNT_RATE.floor}%割引となります。
     

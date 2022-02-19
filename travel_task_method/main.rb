@@ -9,16 +9,16 @@ require "./methods"
   ]
 
 # 旅行プランを尋ねるメッセージ
-ask_plan
+ask_plan_message
 # プランを見せる処理
 show_plan(plans)
 # プランを選択する処理
 selected_plan = select_plan(plans)
 # 予約人数を尋ねるメッセージ
-ask_reservation(selected_plan)
+ask_reservation_message(selected_plan)
 # 人数を入力する処理
-inputed_people = input_people
+inputted_people = input_people
 # 人数の確認をするメッセージ
-confirm_people(inputed_people)
+confirm_people_message(inputted_people)
 # 合計金額を計算する処理
-calculate_sum_price(inputed_people, selected_plan)
+calculate_sum_price(inputted_people, selected_plan)
